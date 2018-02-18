@@ -1,74 +1,57 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { getLocationWeather } from '../actions/index';
+import { getLocationMap } from '../actions/index';
 import _ from 'lodash';
+import Notifications, {notify} from 'react-notify-toast';
 
-import Chart from '../components/chart';
 import GoogleMaps from '../components/google_maps';
-
 
 class GetBrowserGeoLocation extends Component {
 
-  renderWeather(cityData){
-    console.log('cityData', cityData)
-    const name = cityData.city.name;
-    const temps = _.map(cityData.list.map(location => location.main.temp), (temp) => temp - 273.15);
-    const humidities = cityData.list.map(location => location.main.humidity);
-    const pressure = cityData.list.map(location => location.main.pressure);
-    const {lon, lat} = cityData.city.coord;
-        return (
-    <tr key={name}>
-      <td><GoogleMaps lon={lon} lat={lat} /></td>
-      <td>
-        <Chart data={temps} color="blue" units="°C"/>
-      </td>
-      <td>
-        <Chart data={humidities} color="orange" units="kPa" />
-      </td>
-      <td>
-        <Chart data={pressure} color="green" units="%" />
-      </td>
-    </tr>
-    );
-}
+  renderWeather(cityData, index){
+    const lon = cityData.longitude;
+    const lat = cityData.latitude;
+
+  	return (
+  		<tr key={index}>
+        <td><GoogleMaps lon={lon} lat={lat} /></td>
+  		</tr>
+  	);
+  }
 
   componentWillMount() {
-    this.props.getLocationWeather();
+    this.props.getLocationMap();
     this.renderWeather = this.renderWeather.bind(this);
-
   }
 
   	render(){
-        if(_.isEmpty(this.props.location)) {
+        if(this.props.location.error){
+          notify.show(this.props.location.payload.message, 'error', 7000);
+        }
+
+        if(!this.props.location) {
           return (
             <div>Loading...</div>
           )};
-
 
   		return(
   			<table className="table table-hover">
   				<thead>
   					<tr>
-  						<th>City</th>
-  						<th>Temperature (°C)</th>
-  						<th>Pressure (kPa)</th>
-    					<th>Humidity (%)</th>
+              <th>Your location:  </th>
   					</tr>
   				</thead>
   				<tbody>
-            { this.renderWeather(this.props.location.data) }
+            { this.props.location.map(this.renderWeather) }
   				</tbody>
   			</table>
   		);
   	}
-
-
-
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = ({location}) => {
 
-  return {location: state.location};
+  return {location};
 };
 
-export default connect(mapStateToProps, {getLocationWeather})(GetBrowserGeoLocation);
+export default connect(mapStateToProps, {getLocationMap})(GetBrowserGeoLocation);
