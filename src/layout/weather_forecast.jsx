@@ -4,7 +4,7 @@ import GetBrowserGeoLocation from '../containers/geo_located';
 import InputDays from '../containers/input_days';
 import GetDaysWeather from '../containers/detailed_forecast';
 
-const App = () => (
+const WeatherDetail = () => (
   <div>
     <Notifications />
     <InputDays />
@@ -13,4 +13,4 @@ const App = () => (
   </div>
 );
 
-export default App;
+export default WeatherDetail;

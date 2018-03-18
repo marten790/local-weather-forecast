@@ -35,21 +35,25 @@
     "jsdom": "8.1.0",
     "mocha": "2.4.5",
     "react-addons-test-utils": "0.14.7",
-    "webpack": "1.12.9",
-    "webpack-dev-server": "1.14.0"
+    "webpack": "^3.11.0",
+    "webpack-dev-server": "^2.11.1"
   },
   "dependencies": {
     "axios": "0.17.1",
     "babel-preset-stage-1": "6.1.18",
     "lodash": "3.10.1",
     "prop-types": "^15.6.1",
-    "react": "^15.3.0",
-    "react-dom": "^15.3.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.2.0",
     "react-notify-toast": "^0.4.0",
-    "react-redux": "4.3.0",
-    "react-router": "2.0.1",
+    "react-preloadr": "^1.1.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-router-redux": "5.0.0-alpha.9",
     "react-sparklines": "1.6.0",
-    "redux": "3.0.4",
-    "redux-promise": "0.5.3"
+    "redux": "^3.7.2",
+    "redux-promise": "0.5.3",
+    "redux-thunk": "^2.2.0"
   }
 }

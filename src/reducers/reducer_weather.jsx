@@ -1,4 +1,4 @@
-import { FETCH_WEATHER_INPUT } from '../actions/index';
+import { FETCH_WEATHER_INPUT } from './ui/actions';
 
 export default function (state = [], action) {
   switch (action.type) {

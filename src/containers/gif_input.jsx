@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
-import { fetchGifList } from '../actions/index';
+import { fetchGifList } from '../reducers/ui/actions';
 
-class GifSearch extends Component {
+class GifInput extends Component {
   constructor(props) {
     super(props);
 
@@ -49,11 +49,11 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ fetchGifList }, dispatch);
 }
 
-GifSearch.propTypes = {
+GifInput.propTypes = {
   fetchGifList: PropTypes.func,
 };
-GifSearch.defaultProps = {
+GifInput.defaultProps = {
   fetchGifList: [], // eslint-disable-line react/forbid-prop-types,
 };
 
-export default connect(null, mapDispatchToProps)(GifSearch);
+export default connect(null, mapDispatchToProps)(GifInput);

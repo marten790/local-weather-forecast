@@ -1,4 +1,4 @@
-import { FETCH_GIF_LIST } from '../actions/index';
+import { FETCH_GIF_LIST } from './ui/actions';
 
 export default function (state = {}, action) {
   switch (action.type) {

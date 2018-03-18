@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import ReduxPromise from 'redux-promise';
-//
-import App from './components/app';
-import reducers from './reducers';
-//
-const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+import thunk from 'redux-thunk';
+import reducers from '../reducers/ui/index';
+import RouteSetup from '../layout/routes';
+
+const createStoreWithMiddleware = applyMiddleware(ReduxPromise, thunk)(createStore);
 
 ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers)}>
-    <App />
+    <RouteSetup />
   </Provider>
   , document.querySelector('.container'),
 );

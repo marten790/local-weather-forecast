@@ -1,5 +1,7 @@
 import axios from 'axios';
+import rootReducer from './index';
 
+console.log('rootReducer', rootReducer);
 const API_KEY_WEATHER = '767d4989a105ba9e4d65278e6b15488f';
 const ROOT_URL_WEATHER = 'http://api.openweathermap.org/data/2.5/forecast/';
 
@@ -42,34 +44,13 @@ export function getDetailedWeather(daysCount) {
     geolocation.getCurrentPosition((position) => {
       const { latitude } = position.coords;
       const { longitude } = position.coords;
-      let numberOfDays = daysCount;
-      if (daysCount.setDefault) {
+      let numberOfDays = Number(daysCount);
+      if (!daysCount || (daysCount < 1)) {
         numberOfDays = 4;
       }
 
       const url = `${ROOT_URL_WEATHER}daily?appid=${API_KEY_WEATHER}&lat=${latitude}&lon=${longitude}&cnt=${numberOfDays}&units=metric`;
       const request = axios.get(url);
-      // const request = axios.get(url, { responseType: 'json' })
-      // .then(function(responce){
-      //   console.log('responce', responce)
-      //   // responce.data.list.map
-      // });
-
-
-      // function getUserAccount() {
-      //   return axios.get(urlWeather);
-      // }
-      //
-      // function getUserPermissions() {
-      //   return axios.get(urlGifs);
-      // }
-      //
-      // axios.all([getUserAccount(), getUserPermissions()])
-      //   .then(axios.spread(function (acct, perms) {
-      //     console.log('acct',acct)
-      //     console.log('acct',acct)
-      //   }));
-
 
       resolve(request);
     }, () => {

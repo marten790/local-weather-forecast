@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { notify } from 'react-notify-toast';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getLocationMap } from '../actions/index';
-import GoogleMaps from '../components/google_maps';
+import { getLocationMap } from '../reducers/ui/actions';
+import GoogleMaps from '../components/google-maps/google_maps';
 
 
 class GetBrowserGeoLocation extends Component {

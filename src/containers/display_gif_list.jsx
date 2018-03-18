@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
-import { fetchGifList } from '../actions/index';
+import { fetchGifList } from '../reducers/ui/actions';
 
 class DisplayGifList extends Component {
   // constructor(props) {
@@ -22,7 +22,7 @@ class DisplayGifList extends Component {
   render() {
     if (!this.props.gifs.data) {
       return (
-        <div>Loading...</div>
+        <div>Please enter a gif title above....</div>
       );
     }
 
@@ -37,13 +37,13 @@ class DisplayGifList extends Component {
 const mapStateToProps = state => ({ gifs: state.gifs });
 
 DisplayGifList.propTypes = {
-  gifs: PropTypes.array, // eslint-disable-line react/forbid-prop-types,
+  gifs: PropTypes.object, // eslint-disable-line react/forbid-prop-types,
   data: PropTypes.object, // eslint-disable-line react/forbid-prop-types,
   map: PropTypes.array, // eslint-disable-line react/forbid-prop-types,
 };
 
 DisplayGifList.defaultProps = {
-  gifs: [],
+  gifs: {},
   data: {},
   map: [],
 };

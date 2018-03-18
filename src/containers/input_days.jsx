@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { notify } from 'react-notify-toast';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
-import { getDetailedWeather } from '../actions/index';
+import { getDetailedWeather } from '../reducers/ui/actions';
 
 class GetDays extends Component {
   constructor(props) {
@@ -15,7 +15,7 @@ class GetDays extends Component {
     this.onFormSubmit = this.onFormSubmit.bind(this);
   }
   componentDidMount() {
-    this.props.getDetailedWeather({ days: '', setDefault: true });
+    this.props.getDetailedWeather();
   }
 
   onInputChange(event) {
@@ -35,8 +35,10 @@ class GetDays extends Component {
 
     return (
       <div>
+        <h2>Geo Weather</h2>
         <form onSubmit={this.onFormSubmit} className="input-group">
           <input
+            type="number"
             placeholder="Please enter the amount of days you would like to view"
             className="form-control"
             value={this.state.days}
@@ -57,19 +59,25 @@ const mapStateToProps = state => ({
 });
 
 GetDays.propTypes = {
-  days: PropTypes.array, // eslint-disable-line react/forbid-prop-types,
+  data: PropTypes.shape(),
+  days: PropTypes.shape(),
   location: PropTypes.array, // eslint-disable-line react/forbid-prop-types,
   payload: PropTypes.array, // eslint-disable-line react/forbid-prop-types,
   getDetailedWeather: PropTypes.func,
 };
 
 GetDays.defaultProps = {
-  days: [],
+  data: undefined,
+  days: undefined,
   location: [],
   payload: [],
   getDetailedWeather: [],
 };
-
+// days: PropTypes.arrayOf(PropTypes.string)
+// days: PropTypes.shape({
+//   name:PropTypes.string,
+//   name:PropTypes.string,
+// })
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ getDetailedWeather }, dispatch);
 }
