@@ -32,6 +32,7 @@ export function fetchGifList(tag) {
 }
 
 export function getDetailedWeather(daysCount) {
+  console.log('daysCount', daysCount);
   const { geolocation } = navigator;
 
   const days = new Promise(((resolve, reject) => {
@@ -43,7 +44,7 @@ export function getDetailedWeather(daysCount) {
       const { latitude } = position.coords;
       const { longitude } = position.coords;
       let numberOfDays = daysCount;
-      if (daysCount.setDefault) {
+      if (!daysCount) {
         numberOfDays = 4;
       }
 

@@ -1,4 +1,4 @@
-import { FETCH_DAYS_WEATHER } from '../actions/index';
+import { FETCH_DAYS_WEATHER } from './ui/index';
 
 
 export default function (state = {}, action) {
