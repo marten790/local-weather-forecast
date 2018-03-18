@@ -15,7 +15,7 @@ class GetDays extends Component {
     this.onFormSubmit = this.onFormSubmit.bind(this);
   }
   componentDidMount() {
-    this.props.getDetailedWeather({ days: 4);
+    this.props.getDetailedWeather();
   }
 
   onInputChange(event) {
@@ -35,8 +35,10 @@ class GetDays extends Component {
 
     return (
       <div>
+        <h2>Geo Weather</h2>
         <form onSubmit={this.onFormSubmit} className="input-group">
           <input
+            type="number"
             placeholder="Please enter the amount of days you would like to view"
             className="form-control"
             value={this.state.days}
@@ -58,7 +60,7 @@ const mapStateToProps = state => ({
 
 GetDays.propTypes = {
   data: PropTypes.shape(),
-  days: PropTypes.number,
+  days: PropTypes.shape(),
   location: PropTypes.array, // eslint-disable-line react/forbid-prop-types,
   payload: PropTypes.array, // eslint-disable-line react/forbid-prop-types,
   getDetailedWeather: PropTypes.func,
@@ -66,7 +68,7 @@ GetDays.propTypes = {
 
 GetDays.defaultProps = {
   data: undefined,
-  days: 4,
+  days: undefined,
   location: [],
   payload: [],
   getDetailedWeather: [],

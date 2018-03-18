@@ -8,11 +8,10 @@ import DayWeather from '../components/display-weather-day/day_weather';
 
 
 class GetDaysWeather extends Component {
-  constructor(props) {
-    super(props);
-    this.state = { days: '', setDefault: false };
-  }
-
+  // constructor(props) {
+  //   super(props);
+  //   this.state = { days: null };
+  // }
 
   render() {
     if (this.props.days.error) {
@@ -20,16 +19,14 @@ class GetDaysWeather extends Component {
     }
 
     if (!this.props.days.data) {
-      console.log('this', this);
       return (
         <div>Loading...</div>
       );
     }
-    const weatherData = this.props.days.data.list;
+
     return (
       <div>
-        <Link className="btn btn-primary" to="/gifsearch" />
-        <DayWeather weatherData={weatherData} />
+        <DayWeather weatherDataArray={this.props.days.data.list} />
       </div>
     );
   }
@@ -47,6 +44,8 @@ GetDaysWeather.defaultProps = {
 };
 
 function mapDispatchToProps(dispatch) {
+  // console.log('getDetailedWeather', getDetailedWeather());
+
   return bindActionCreators({ getDetailedWeather }, dispatch);
 }
 export default connect(mapStateToProps, mapDispatchToProps)(GetDaysWeather);

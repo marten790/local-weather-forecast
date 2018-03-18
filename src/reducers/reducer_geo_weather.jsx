@@ -1,4 +1,4 @@
-import { FETCH_GEO_WEATHER } from './ui/index';
+import { FETCH_GEO_WEATHER } from './ui/actions';
 
 export default function (state = [], action) {
   if (action.error) {
