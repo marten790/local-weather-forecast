@@ -1,7 +1,6 @@
 import axios from 'axios';
-import rootReducer from './index';
+import rootReducer from '../index';// here.........................................................
 
-console.log('rootReducer', rootReducer);
 const API_KEY_WEATHER = '767d4989a105ba9e4d65278e6b15488f';
 const ROOT_URL_WEATHER = 'http://api.openweathermap.org/data/2.5/forecast/';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const DayWeather = refs => (
+const DayInfo = refs => (
   refs.weatherDataArray.map(dayWeatherData => (
     <div key={dayWeatherData.dt}>
       <div>17 Feb</div>
@@ -12,12 +12,12 @@ const DayWeather = refs => (
   ))
 );
 
-DayWeather.propTypes = {
+DayInfo.propTypes = {
   lat: PropTypes.number,
   lon: PropTypes.number,
 };
-DayWeather.defaultProps = {
+DayInfo.defaultProps = {
   lat: null,
   lon: null,
 };
-export default DayWeather;
+export default DayInfo;

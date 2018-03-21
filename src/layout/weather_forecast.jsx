@@ -1,16 +1,19 @@
 import React from 'react';
 import Notifications from 'react-notify-toast';
-import GetBrowserGeoLocation from '../containers/geo_located';
-import InputDays from '../containers/input_days';
-import GetDaysWeather from '../containers/detailed_forecast';
+import GetBrowserGeoLocation from '../pages/weather-detail/geo-located';
+import InputDays from '../pages/weather-detail/input-days';
+import GetDaysWeather from '../pages/weather-detail';
+import { connect } from 'react-redux';
 
-const WeatherDetail = () => (
+const WeatherDetail = ({ state }) => (
   <div>
-    <Notifications />
+    {/* <Notifications /> */}
     <InputDays />
     <GetDaysWeather />
     <GetBrowserGeoLocation />
   </div>
 );
 
-export default WeatherDetail;
+
+const mapStateToProps = state => ({ state });
+export default connect(mapStateToProps)(WeatherDetail);

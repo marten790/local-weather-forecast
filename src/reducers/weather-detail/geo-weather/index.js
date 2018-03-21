@@ -1,4 +1,4 @@
-import { FETCH_GEO_WEATHER } from './ui/actions';
+import { FETCH_GEO_WEATHER } from '../../ui/actions';
 
 export default function (state = [], action) {
   if (action.error) {
@@ -13,3 +13,7 @@ export default function (state = [], action) {
       return state;
   }
 }
+// {
+//   ...state,
+//   location: state.leftNavigationActive,
+// }

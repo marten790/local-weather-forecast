@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { notify } from 'react-notify-toast';
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
-import { getDetailedWeather } from '../reducers/ui/actions';
+import { getDetailedWeather } from '../../../reducers/ui/actions';
 
 class GetDays extends Component {
   constructor(props) {
@@ -54,13 +54,12 @@ class GetDays extends Component {
   }
 }
 
-const mapStateToProps = state => ({
-  days: state.days,
-});
+// const mapStateToProps = state => ({
+//   days: state.days,
+// });
 
 GetDays.propTypes = {
   data: PropTypes.shape(),
-  days: PropTypes.shape(),
   location: PropTypes.array, // eslint-disable-line react/forbid-prop-types,
   payload: PropTypes.array, // eslint-disable-line react/forbid-prop-types,
   getDetailedWeather: PropTypes.func,
@@ -68,11 +67,11 @@ GetDays.propTypes = {
 
 GetDays.defaultProps = {
   data: undefined,
-  days: undefined,
   location: [],
   payload: [],
   getDetailedWeather: [],
 };
+
 // days: PropTypes.arrayOf(PropTypes.string)
 // days: PropTypes.shape({
 //   name:PropTypes.string,

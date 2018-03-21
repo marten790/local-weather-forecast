@@ -1,16 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
-import { fetchGifList } from '../reducers/ui/actions';
-
 class DisplayGifList extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.state = { gifs: {} };
-  // }
-
   renderGifs(gifData) {
     return (
       <span key={gifData.images.fixed_height_small.url}>
@@ -34,8 +25,6 @@ class DisplayGifList extends Component {
   }
 }
 
-const mapStateToProps = state => ({ gifs: state.gifs });
-
 DisplayGifList.propTypes = {
   gifs: PropTypes.object, // eslint-disable-line react/forbid-prop-types,
   data: PropTypes.object, // eslint-disable-line react/forbid-prop-types,
@@ -48,7 +37,5 @@ DisplayGifList.defaultProps = {
   map: [],
 };
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ fetchGifList }, dispatch);
-}
-export default connect(mapStateToProps, mapDispatchToProps)(DisplayGifList);
+
+export default DisplayGifList;

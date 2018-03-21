@@ -1,4 +1,4 @@
-import { FETCH_WEATHER_INPUT } from './ui/actions';
+import { FETCH_WEATHER_INPUT } from '../../ui/actions';
 
 export default function (state = [], action) {
   switch (action.type) {
@@ -9,3 +9,7 @@ export default function (state = [], action) {
       return state;
   }
 }
+// {
+//   ...state,
+//   days: state.leftNavigationActive,
+// }

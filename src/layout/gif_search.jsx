@@ -1,8 +1,7 @@
 import React from 'react';
 import Notifications from 'react-notify-toast';
-import GetBrowserGeoLocation from '../containers/geo_located';
-import GifInput from '../containers/gif_input';
-import DisplayGifList from '../containers/display_gif_list';
+import GifInput from '../pages/gif-search/gif-input';
+import DisplayGifList from '../pages/gif-search';
 
 const GifSearch = () => (
   <div>

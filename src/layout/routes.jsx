@@ -1,10 +1,11 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-
 import GifSearch from '../layout/gif_search';
 import WeatherDetail from '../layout/weather_forecast';
 
-const RouteSetup = () => (
+
+const RouteSetup = ({ state }) => (
   <Router>
     <div>
       <ul>
@@ -18,10 +19,11 @@ const RouteSetup = () => (
 
       <hr />
 
-      <Route exact path="/" component={WeatherDetail} />
       <Route path="/GifSearch" component={GifSearch} />
+      <Route exact path="/" component={WeatherDetail} />
     </div>
   </Router>
 );
 
-export default RouteSetup;
+const mapStateToProps = state => ({ state });
+export default connect(mapStateToProps)(RouteSetup);
