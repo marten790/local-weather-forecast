@@ -1,6 +1,10 @@
 import { FETCH_GEO_WEATHER } from '../../ui/actions';
 
-export default function (state = [], action) {
+const INIT_STATE = [];
+
+export default function (state = INIT_STATE, action) {
+  console.log('state FETCH_GEO_WEATHER', state);
+  // console.log('action FETCH_GEO_WEATHER', action);
   if (action.error) {
     return action;
   }
@@ -13,7 +17,7 @@ export default function (state = [], action) {
       return state;
   }
 }
-// {
+// [
 //   ...state,
-//   location: state.leftNavigationActive,
-// }
+//   location: action.payload,
+// ];
