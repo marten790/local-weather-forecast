@@ -1,26 +1,12 @@
 import React, { Component } from 'react';
 import { notify } from 'react-notify-toast';
-import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { getLocationMap } from '../reducers/ui/actions';
-import GoogleMaps from '../components/google-maps/google_maps';
-
+import GoogleMaps from '../../components/google-maps';
+import './index.scss';
 
 class GetBrowserGeoLocation extends Component {
   componentWillMount() {
     this.props.getLocationMap();
-    this.renderWeather = this.renderWeather.bind(this);
-  }
-
-  renderWeather(cityData, index) {
-    const lon = cityData.longitude;
-    const lat = cityData.latitude;
-
-    return (
-      <tr key={index}>
-        <td><GoogleMaps lon={lon} lat={lat} /></td>
-      </tr>
-    );
   }
 
   render() {
@@ -35,21 +21,28 @@ class GetBrowserGeoLocation extends Component {
     }
 
     return (
-      <table className="table table-hover">
+      <table className="table table-hover location-map">
         <thead>
           <tr>
             <th>Your location:  </th>
           </tr>
         </thead>
         <tbody>
-          { this.props.location.map(this.renderWeather) }
+          { this.props.location.map((current) => {
+            const lon = current.longitude;
+            const lat = current.latitude;
+
+            return (
+              <tr key={lat + lon}>
+                <td><GoogleMaps lon={lon} lat={lat} /></td>
+              </tr>
+            );
+          }) }
         </tbody>
       </table>
     );
   }
 }
-
-const mapStateToProps = ({ location }) => ({ location });
 
 GetBrowserGeoLocation.propTypes = {
   location: PropTypes.array, // eslint-disable-line react/forbid-prop-types,
@@ -63,5 +56,4 @@ GetBrowserGeoLocation.defaultProps = {
   message: '', // eslint-disable-line react/forbid-prop-types,
   getLocationMap: [], // eslint-disable-line react/forbid-prop-types,
 };
-
-export default connect(mapStateToProps, { getLocationMap })(GetBrowserGeoLocation);
+export default GetBrowserGeoLocation;

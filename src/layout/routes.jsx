@@ -1,8 +1,8 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import WeatherDetail from './index';
 
-import GifSearch from '../layout/gif_search';
-import WeatherDetail from '../layout/weather_forecast';
 
 const RouteSetup = () => (
   <Router>
@@ -11,17 +11,11 @@ const RouteSetup = () => (
         <li>
           <Link to="/">Get your weather forecast</Link>
         </li>
-        <li>
-          <Link to="/GifSearch">Search for a Gif</Link>
-        </li>
       </ul>
-
       <hr />
-
       <Route exact path="/" component={WeatherDetail} />
-      <Route path="/GifSearch" component={GifSearch} />
     </div>
   </Router>
 );
 
-export default RouteSetup;
+export default connect()(RouteSetup);
