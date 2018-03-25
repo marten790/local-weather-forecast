@@ -7,16 +7,11 @@ import './index.scss';
 class GetDays extends Component {
   constructor(props) {
     super(props);
-
     this.state = { days: '' };
 
     this.onInputChange = this.onInputChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
   }
-  componentDidMount() {
-    this.props.getDetailedWeather();
-  }
-
   onInputChange(event) {
     this.setState({ days: event.target.value });
   }
