@@ -25,7 +25,7 @@ class WeatherDetail extends Component {
           && <InputDays />}
         {!this.props.days.error
             && this.props.days.data
-            && <GetDaysWeather />}
+            && <GetDaysWeather weatherdata={this.props.days} />}
         {!this.props.days.error
             && this.props.days.data
         && <GetBrowserGeoLocation />}
