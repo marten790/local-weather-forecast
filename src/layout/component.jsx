@@ -13,6 +13,7 @@ import GetDaysWeather from '../pages/weather-detail';
 class WeatherDetail extends Component {
   componentDidMount() {
     this.props.getDetailedWeather();
+    this.props.getGeoLocation();
   }
 
   render() {
@@ -22,6 +23,8 @@ class WeatherDetail extends Component {
         {status === 'FAILED' && <p>Error</p>}
         {status === 'REQUESTED' && <p>Loading.....</p>}
         {status === 'SUCCEEDED' && <GetDaysWeather weatherdata={payload} />}
+        {console.log('this', this)}
+
         {/* {this.props.days.error && <p>Error: this.props.days.error</p>}
           {!this.props.days.data && <p>Loading.....</p>}
           {!this.props.days.error
@@ -41,6 +44,7 @@ class WeatherDetail extends Component {
 
 WeatherDetail.propTypes = {
   getDetailedWeather: PropTypes.func.isRequired,
+  getGeoLocation: PropTypes.func.isRequired,
   payload: PropTypes.shape({}),
   status: PropTypes.string,
 };
