@@ -55,10 +55,11 @@ export function getDetailedWeather(daysCount) {
       reject(new Error('Permission denied, This application requires the use of location services, please enable them on your device to use this application'));
     });
   }));
-  return {
-    type: FETCH_DAYS_WEATHER,
-    payload: days,
-  };
+  // return {
+  //   type: FETCH_DAYS_WEATHER,
+  //   payload: days,
+  // }
+  return days;
 }
 
 
