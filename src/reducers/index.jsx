@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux';
 // import app from './app';
 
-import WeatherReducer from './weather-detail/input-weather';
-import DaysWeather from './weather-detail/days-weather';
-import GeoWeather from './weather-detail/geo-weather';
+import getNumberOfDays from './weather-detail/days';
+import getWeather from './weather-detail/input-weather';
+import getLocation from './weather-detail/map';
 
 const rootReducer = combineReducers({
-  weather: WeatherReducer,
-  location: GeoWeather,
-  days: DaysWeather,
+  days: getNumberOfDays,
+  weather: getWeather,
+  location: getLocation,
 });
 
 export default rootReducer;
