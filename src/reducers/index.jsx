@@ -12,13 +12,3 @@ const rootReducer = combineReducers({
 });
 
 export default rootReducer;
-
-// import { routerReducer as router } from 'react-router-redux';
-// import { combineReducers } from 'redux';
-//
-// import daysWeather from './weather-detail/days-weather';
-// import geoWeather from './weather-detail/geo-weather';
-// import inputWeather from './weather-detail/input-weather';
-//
-// const rootReducer = combineReducers({ daysWeather, geoWeather, inputWeather, router });
-// export default rootReducer;
