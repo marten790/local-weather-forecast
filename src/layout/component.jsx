@@ -22,8 +22,6 @@ class WeatherDetail extends Component {
     const { location } = this.props;
     return (
       <React.Fragment>
-        <InputDays />
-
         {days.status === 'FAILED' && <p>Error</p>}
         {days.status === 'REQUESTED' && <p>Loading.....</p>}
         {days.status === 'SUCCEEDED' && <GetDaysWeather weatherdata={days.weatherPayload} />}
