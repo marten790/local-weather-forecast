@@ -5,7 +5,7 @@ import WeatherDetail from './component';
 
 import getDetailedWeather from '../api/get-weather';
 
-const mapStateToProps = state => state.days;
+const mapStateToProps = state => state;
 
 function mapDispatchToProps(dispatch) {
   return {
@@ -21,7 +21,6 @@ function mapDispatchToProps(dispatch) {
       navigator.geolocation.getCurrentPosition((position) => {
         dispatch(fetchMapLocationRequested());
         dispatch(fetchMapLocationSucceeded(position.coords));
-        console.log('position', position.coords);
       });
     },
   };

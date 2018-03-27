@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-// import GetBrowserGeoLocation from '../pages/weather-detail/map';
-// import InputDays from '../pages/weather-detail/input-days';
+import GoogleMaps from '../pages/components/google-maps';
+// import GoogleMaps from '../../components/google-maps';
+
+import InputDays from '../pages/weather-detail/input-weather';
 import GetDaysWeather from '../pages/weather-detail';
 // set partials conditionally to show only if data is available.
 // Remove state from all children components and only have the input passting state to actions.
@@ -15,15 +17,21 @@ class WeatherDetail extends Component {
     this.props.getDetailedWeather();
     this.props.getGeoLocation();
   }
-
   render() {
-    const { payload, status } = this.props;
+    const { days } = this.props;
+    const { location } = this.props;
     return (
       <React.Fragment>
-        {status === 'FAILED' && <p>Error</p>}
-        {status === 'REQUESTED' && <p>Loading.....</p>}
-        {status === 'SUCCEEDED' && <GetDaysWeather weatherdata={payload} />}
-        {console.log('this', this)}
+        <InputDays />
+
+        {days.status === 'FAILED' && <p>Error</p>}
+        {days.status === 'REQUESTED' && <p>Loading.....</p>}
+        {days.status === 'SUCCEEDED' && <GetDaysWeather weatherdata={days.weatherPayload} />}
+
+        {location.status === 'FAILED' && <p>Error</p>}
+        {location.status === 'REQUESTED' && <p>Loading.....</p>}
+        {location.status === 'SUCCEEDED' && <GoogleMaps lon={location.geoLocation.longitude} lat={location.geoLocation.latitude} />}
+
 
         {/* {this.props.days.error && <p>Error: this.props.days.error</p>}
           {!this.props.days.data && <p>Loading.....</p>}
@@ -45,13 +53,13 @@ class WeatherDetail extends Component {
 WeatherDetail.propTypes = {
   getDetailedWeather: PropTypes.func.isRequired,
   getGeoLocation: PropTypes.func.isRequired,
-  payload: PropTypes.shape({}),
-  status: PropTypes.string,
+  days: PropTypes.shape({}),
+  location: PropTypes.shape({}),
 };
 
 WeatherDetail.defaultProps = {
-  payload: undefined,
-  status: 'REQUESTED',
+  days: undefined,
+  location: undefined,
 };
 // WeatherDetail.propTypes = {
 //   getDetailedWeather: PropTypes.func,

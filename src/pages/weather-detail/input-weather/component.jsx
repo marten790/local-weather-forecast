@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { notify } from 'react-notify-toast';
 import PropTypes from 'prop-types';
 import './index.scss';
 
@@ -7,7 +6,7 @@ import './index.scss';
 class GetDays extends Component {
   constructor(props) {
     super(props);
-    this.state = { days: '' };
+    this.state = { days: undefined };
 
     this.onInputChange = this.onInputChange.bind(this);
     this.onFormSubmit = this.onFormSubmit.bind(this);
@@ -19,14 +18,10 @@ class GetDays extends Component {
   onFormSubmit(event) {
     event.preventDefault();
     this.props.getDetailedWeather(this.state.days);
-    this.setState({ days: '' });
+    this.setState({ days: undefined });
   }
 
   render() {
-    if (this.props.data) {
-      notify.show(this.props.location.payload.message, 'error', 7000);
-    }
-
     return (
       <div>
         <h2>Geo Weather</h2>
@@ -49,16 +44,12 @@ class GetDays extends Component {
 }
 
 GetDays.propTypes = {
-  data: PropTypes.shape(),
-  location: PropTypes.array, // eslint-disable-line react/forbid-prop-types,
-  payload: PropTypes.array, // eslint-disable-line react/forbid-prop-types,
+  days: PropTypes.number,
   getDetailedWeather: PropTypes.func,
 };
 
 GetDays.defaultProps = {
-  data: undefined,
-  location: [],
-  payload: [],
+  days: undefined,
   getDetailedWeather: [],
 };
 
