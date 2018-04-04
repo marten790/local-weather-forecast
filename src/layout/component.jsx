@@ -26,14 +26,12 @@ class WeatherDetail extends Component {
 
   onFormSubmit(event) {
     event.preventDefault();
-    console.log('OnSubmit OUTSIDE', this.state.noOfDays);
     this.props.getDetailedWeather(this.state.noOfDays);
     this.setState({ noOfDays: undefined });
   }
 
   onInputChange(event) {
     event.preventDefault();
-    console.log('OnChange OUTSIDE', event.target.value);
     this.setState({ noOfDays: event.target.value });
   }
 
@@ -70,18 +68,4 @@ WeatherDetail.defaultProps = {
   weatherdata: undefined,
   location: undefined,
 };
-// WeatherDetail.propTypes = {
-//   getDetailedWeather: PropTypes.func,
-//   days: PropTypes.shape(), // eslint-disable-line react/forbid-prop-types,
-// };
-// WeatherDetail.defaultProps = {
-//   getDetailedWeather: [],
-//   days: {},
-// };
 export default WeatherDetail;
-
-// days: PropTypes.arrayOf(PropTypes.string)
-// days: PropTypes.shape({
-//   name:PropTypes.string,
-//   name:PropTypes.string,
-// })
