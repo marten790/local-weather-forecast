@@ -3,7 +3,6 @@ import './index.scss';
 
 const GetDays = refs => (
   <div>
-    {console.log('INSIDE ', refs)}
     <h2>Geo Weather</h2>
     <form onSubmit={refs.onFormSubmit} className="input-group">
       <input

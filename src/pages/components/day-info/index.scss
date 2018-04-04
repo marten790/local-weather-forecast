@@ -1,0 +1,46 @@
+.day-weather-data{
+	&__date{
+		background: grey;
+		color:white;
+		text-align: center;
+		font-weight: bold;
+	}
+	&__temp{
+		&__day{
+			padding: 3px;
+			float: left;
+			font-weight: bold;
+			font-size: 30px;
+			border-right: 2px solid;
+			margin: 3px 0;
+		}
+		&__min{
+			padding: 3px;
+			color: #a8a8a8;
+			font-size: 16px;
+			&__small{
+				font-size: 8px;
+			}
+		}
+		&__max{
+			padding: 5px;
+			color: #7e7e7e;
+			font-size: 16px;
+			&__small{
+				font-size: 8px;
+			}
+		}
+	}
+	&__image{
+		clear: both;
+		background: #7e7e7e;
+		display: block;
+		height: 100px;
+	}
+	&__detail{
+		font-weight: bold;
+		text-transform: uppercase;
+		text-align: center;
+		font-size: 20px;
+	}
+}

@@ -1,0 +1,86 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js add --dev jest
+
+PATH: 
+  C:\Users\martent\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\martent\bin;C:\Program Files\Microsoft MPI\Bin;C:\ProgramData\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\system32\config\systemprofile\.dnx\bin;C:\Program Files\Microsoft DNX\Dnvm;C:\Program Files\Microsoft SQL Server\130\Tools\Binn;C:\Program Files\Microsoft SQL Server\110\Tools\Binn;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn\ManagementStudio;C:\Program Files (x86)\Microsoft SQL Server\110\Tools\Binn;C:\Program Files (x86)\Microsoft SQL Server\110\DTS\Binn;C:\Program Files\Microsoft SQL Server\110\DTS\Binn;C:\Program Files (x86)\WinMerge;C:\Program Files (x86)\Skype\Phone;C:\Program Files (x86)\Yarn\bin;C:\Program Files\dotnet;C:\Program Files\MongoDB\Server\3.4\bin;C:\Program Files (x86)\GtkSharp\2.12\bin;C:\Program Files\Git\cmd;C:\Program Files\TortoiseGit\bin;C:\Program Files\nodejs;C:\Ruby22-x64\bin;node-modules\.bin;C:\Users\martent\AppData\Local\atom\bin;C:\Users\martent\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Atmel\Flip 3.4.7\bin;C:\Users\martent\AppData\Local\Yarn\.bin;C:\Program Files\Docker Toolbox;C:\Program Files\Microsoft VS Code\bin;C:\Users\martent\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl;node_modules\.bin
+
+Yarn version: 
+  1.5.1
+
+Node version: 
+  9.7.1
+
+Platform: 
+  win32 x64
+
+npm manifest: 
+  {
+    "name": "local-weather-forecast",
+    "version": "1.0.0",
+    "description": "Local weather forcast app",
+    "main": "index.js",
+    "scripts": {
+      "lint": "eslint **/*.js, eslint **/*.jsx",
+      "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js"
+    },
+    "repository": "git+https://marten790@bitbucket.org/marten790/local-weather-forecast.git",
+    "keywords": [
+      "weather",
+      "forecast"
+    ],
+    "author": "@marten790",
+    "license": "MIT",
+    "homepage": "https://bitbucket.org/marten790/local-weather-forecast#readme",
+    "devDependencies": {
+      "babel-core": "6.2.1",
+      "babel-loader": "6.2.0",
+      "babel-preset-es2015": "6.1.18",
+      "babel-preset-react": "6.1.18",
+      "chai": "3.5.0",
+      "chai-jquery": "2.0.0",
+      "css-loader": "^0.28.11",
+      "eslint": "^4.18.0",
+      "eslint-config-airbnb": "^16.1.0",
+      "eslint-import-resolver-webpack": "^0.8.4",
+      "eslint-plugin-import": "^2.8.0",
+      "eslint-plugin-jsx-a11y": "^6.0.3",
+      "eslint-plugin-react": "^7.6.1",
+      "extract-text-webpack-plugin": "^3.0.2",
+      "jquery": "3.0.0",
+      "jsdom": "8.1.0",
+      "mocha": "2.4.5",
+      "node-sass": "^4.8.3",
+      "react-addons-test-utils": "0.14.7",
+      "sass-loader": "^6.0.7",
+      "style-loader": "^0.20.3",
+      "webpack": "^3.11.0",
+      "webpack-dev-server": "^2.11.1"
+    },
+    "dependencies": {
+      "axios": "0.17.1",
+      "babel-preset-stage-1": "6.1.18",
+      "lodash": "3.10.1",
+      "prop-types": "^15.6.1",
+      "react": "^16.0.0",
+      "react-dom": "^16.2.0",
+      "react-notify-toast": "^0.4.0",
+      "react-preloadr": "^1.1.0",
+      "react-redux": "^5.0.7",
+      "react-router": "^4.2.0",
+      "react-router-dom": "^4.2.2",
+      "react-router-redux": "5.0.0-alpha.9",
+      "react-sparklines": "1.6.0",
+      "redux": "^3.7.2",
+      "redux-promise": "0.5.3",
+      "redux-thunk": "^2.2.0"
+    }
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  Error: EPERM: operation not permitted, unlink 'C:\code\local-weather-forecast\node_modules\node-sass\vendor\win32-x64-59\binding.node'

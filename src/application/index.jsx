@@ -16,5 +16,5 @@ ReactDOM.render(
   <Provider store={createStoreWithMiddleware(reducers, reduxDevtools)}>
     <RouteSetup />
   </Provider>
-  , document.querySelector('.container'),
+  , document.querySelector('.app-container'),
 );
