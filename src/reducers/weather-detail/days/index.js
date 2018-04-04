@@ -1,8 +1,8 @@
 import { GET_WEATHER_FAILED, GET_WEATHER_REQUESTED, GET_WEATHER_SUCCEEDED } from './actions';
 
 const INIT_STATE = {
-  payload: undefined,
   status: 'REQUESTED',
+  payload: undefined,
 };
 
 export default (state = INIT_STATE, action = {}) => {

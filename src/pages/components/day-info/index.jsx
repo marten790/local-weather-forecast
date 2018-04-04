@@ -17,6 +17,7 @@ DayInfo.propTypes = {
   lat: PropTypes.number,
   lon: PropTypes.number,
 };
+
 DayInfo.defaultProps = {
   lat: null,
   lon: null,

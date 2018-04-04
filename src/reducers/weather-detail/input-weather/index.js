@@ -1,8 +1,8 @@
 import { GET_DAYS_AMOUNT_FAILED, GET_DAYS_AMOUNT_REQUESTED, GET_DAYS_AMOUNT_SUCCEEDED } from './actions';
 
 const INIT_STATE = {
-  days: '',
   status: 'REQUESTED',
+  noOfDays: undefined,
 };
 
 export default function (state = INIT_STATE, action = {}) {
@@ -12,7 +12,7 @@ export default function (state = INIT_STATE, action = {}) {
     case GET_DAYS_AMOUNT_REQUESTED:
       return INIT_STATE;
     case GET_DAYS_AMOUNT_SUCCEEDED:
-      return { ...state, status: 'SUCCEEDED', days: action.payload.data };
+      return { ...state, status: 'SUCCEEDED', noOfDays: action.payload.data };
     default:
       return state;
   }

@@ -10,6 +10,7 @@ export default (daysCount) => {
     if (!geolocation) {
       reject(new Error('Geolocation not supported'));
     }
+
     geolocation.getCurrentPosition((position) => {
       const { latitude } = position.coords;
       const { longitude } = position.coords;
