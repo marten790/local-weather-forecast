@@ -9,10 +9,12 @@ const mapStateToProps = state => state;
 function mapDispatchToProps(dispatch) {
   return {
     getDetailedWeather: (value) => {
-      dispatch(getWeatherRequested());
-      getDetailedWeather(value)
-        .then(data => dispatch(getWeatherSucceeded(data)))
-        .catch(() => dispatch(getWeatherFailed()));
+      navigator.geolocation.getCurrentPosition((position) => {
+        dispatch(getWeatherRequested());
+        getDetailedWeather(value, position.coords)
+          .then(data => dispatch(getWeatherSucceeded(data)))
+          .catch(() => dispatch(getWeatherFailed()));
+      });
     },
     getGeoLocation: () => {
       dispatch(fetchMapLocationRequested());

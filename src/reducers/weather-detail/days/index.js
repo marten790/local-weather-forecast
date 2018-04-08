@@ -7,6 +7,7 @@ const INIT_STATE = {
 
 export default (state = INIT_STATE, action = {}) => {
   console.log('action', action);
+  // console.log('state', state);
   switch (action.type) {
     case GET_WEATHER_FAILED:
       return { status: 'FAILED' };

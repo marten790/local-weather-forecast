@@ -1,5 +1,4 @@
 import { combineReducers } from 'redux';
-// import app from './app';
 
 import daysWeather from './weather-detail/days';
 import numberOfDaysVisible from './weather-detail/input-weather';

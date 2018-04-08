@@ -4,7 +4,7 @@ import './index.scss';
 
 const DayInfo = refs => (
   refs.weatherDataArray.map(dayWeatherData => (
-    <div className="col-4 day-weather-data" key={dayWeatherData.dt}>
+    <div className="col-3 day-weather-data" key={dayWeatherData.dt}>
       <div className="day-weather-data__date">17 Feb</div>
       <div className="day-weather-data__temp">
         <div className="day-weather-data__temp__day">{dayWeatherData.temp.day}&#8451;</div>
