@@ -11,6 +11,9 @@ const GetDays = refs => (
         className="form-control"
         value={refs.days}
         onChange={refs.onInputChange}
+        min="1"
+        max="16"
+        step="1"
       />
 
       <span className="input-group-btn">
