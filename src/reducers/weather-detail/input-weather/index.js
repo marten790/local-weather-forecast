@@ -1,11 +1,11 @@
 import { GET_DAYS_AMOUNT_FAILED, GET_DAYS_AMOUNT_REQUESTED, GET_DAYS_AMOUNT_SUCCEEDED } from './actions';
 
-const INIT_STATE = {
+export const INIT_STATE = {
   status: 'REQUESTED',
   noOfDays: undefined,
 };
 
-export default function (state = INIT_STATE, action = {}) {
+export default (state = INIT_STATE, action = {}) => {
   switch (action.type) {
     case GET_DAYS_AMOUNT_FAILED:
       return { ...state, status: 'FAILED' };
@@ -16,4 +16,4 @@ export default function (state = INIT_STATE, action = {}) {
     default:
       return state;
   }
-}
+};

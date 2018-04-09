@@ -1,13 +1,11 @@
 import { GET_WEATHER_FAILED, GET_WEATHER_REQUESTED, GET_WEATHER_SUCCEEDED } from './actions';
 
-const INIT_STATE = {
+export const INIT_STATE = {
   status: 'REQUESTED',
   payload: undefined,
 };
 
 export default (state = INIT_STATE, action = {}) => {
-  console.log('action', action);
-  // console.log('state', state);
   switch (action.type) {
     case GET_WEATHER_FAILED:
       return { status: 'FAILED' };

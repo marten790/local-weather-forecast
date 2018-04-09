@@ -18,6 +18,7 @@ test('reducers / weather-detail / map / actions / FETCH_MAP_LOCATION_REQUESTED',
 });
 
 test('reducers / weather-detail / map / actions / FETCH_MAP_LOCATION_SUCCEEDED', () => {
-  const expected = { type: FETCH_MAP_LOCATION_SUCCEEDED };
-  expect(fetchMapLocationSucceeded()).toEqual(expected);
+  const payload = { key: 'value' };
+  const expected = { payload, type: FETCH_MAP_LOCATION_SUCCEEDED };
+  expect(fetchMapLocationSucceeded(payload)).toEqual(expected);
 });
