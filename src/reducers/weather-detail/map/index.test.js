@@ -1,8 +1,8 @@
 import reducer, { INIT_STATE } from './index';
 import {
-  getWeatherFailed,
-  getWeatherRequested,
-  getWeatherSucceeded,
+  fetchMapLocationFailed,
+  fetchMapLocationRequested,
+  fetchMapLocationSucceeded,
 } from './actions';
 
 
@@ -12,28 +12,28 @@ test('testing default state', () => {
   expect(actual).toEqual(expected);
 });
 
-test('reducers / weather-detail / days / reducers / REQUESTED', () => {
+test('reducers / weather-detail / map / reducers / REQUESTED', () => {
   const payload = { value: 'value' };
-  const action = getWeatherRequested(payload);
-  const expected = { status: 'REQUESTED' };
+  const action = fetchMapLocationRequested(payload);
+  const expected = { status: 'REQUESTED', geoLocation: {} };
   const actual = reducer({}, action);
 
   expect(actual).toEqual(expected);
 });
 
-test('reducers / weather-detail / days / reducers / FAILED', () => {
+test('reducers / weather-detail / map / reducers / FAILED', () => {
   const payload = { value: 'value' };
-  const action = getWeatherFailed(payload);
+  const action = fetchMapLocationFailed(payload);
   const expected = { status: 'FAILED' };
   const actual = reducer({}, action);
 
   expect(actual).toEqual(expected);
 });
 
-test('reducers / weather-detail / days / reducers / SUCCEEDED', () => {
+test('reducers / weather-detail / map / reducers / SUCCEEDED', () => {
   const payload = { value: 'value' };
-  const action = getWeatherSucceeded(payload);
-  const expected = { weatherPayload: action.payload, status: 'SUCCEEDED' };
+  const action = fetchMapLocationSucceeded(payload);
+  const expected = { geoLocation: action.payload, status: 'SUCCEEDED' };
   const actual = reducer({}, action);
 
   expect(actual).toEqual(expected);

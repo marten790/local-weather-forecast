@@ -18,6 +18,7 @@ test('reducers / weather-detail / input-weather / actions / GET_DAYS_AMOUNT_REQU
 });
 
 test('reducers / weather-detail / input-weather / actions / GET_DAYS_AMOUNT_SUCCEEDED', () => {
-  const expected = { type: GET_DAYS_AMOUNT_SUCCEEDED };
-  expect(getDaysAmountSucceeded()).toEqual(expected);
+  const payload = { key: 'value' };
+  const expected = { payload, type: GET_DAYS_AMOUNT_SUCCEEDED };
+  expect(getDaysAmountSucceeded(payload)).toEqual(expected);
 });

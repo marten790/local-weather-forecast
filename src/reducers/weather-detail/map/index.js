@@ -1,14 +1,11 @@
 import { FETCH_MAP_LOCATION_FAILED, FETCH_MAP_LOCATION_REQUESTED, FETCH_MAP_LOCATION_SUCCEEDED } from './actions';
 
-const INIT_STATE = {
+export const INIT_STATE = {
   status: 'REQUESTED',
   geoLocation: {},
 };
 
-export default function (state = INIT_STATE, action) {
-  if (action.error) {
-    return action;
-  }
+export default (state = INIT_STATE, action = {}) => {
   switch (action.type) {
     case FETCH_MAP_LOCATION_FAILED:
       return { status: 'FAILED' };
@@ -20,4 +17,4 @@ export default function (state = INIT_STATE, action) {
     default:
       return state;
   }
-}
+};
