@@ -12,6 +12,7 @@ export default (state = INIT_STATE, action = {}) => {
     case FETCH_MAP_LOCATION_REQUESTED:
       return INIT_STATE;
     case FETCH_MAP_LOCATION_SUCCEEDED:
+
       return { ...state, geoLocation: action.payload, status: 'SUCCEEDED' };
 
     default:
