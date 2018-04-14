@@ -4,18 +4,19 @@ import './index.scss';
 
 class GoogleMaps extends Component {
   componentDidMount() {
-    const { google } = window;
     const mapData = this.mapDiv;
+    const { maps } = window.google;
+    const { lat, lon } = this.props;
     const yourCoords = {
-      lat: this.props.lat,
-      lng: this.props.lon,
+      lat,
+      lng: lon,
     };
-    const map = new google.maps.Map(mapData, {
+    const map = new maps.Map(mapData, {
       zoom: 12,
       center: yourCoords,
     });
 
-    const marker = new google.maps.Marker({
+    const marker = new maps.Marker({
       position: yourCoords,
       map,
       title: 'Your estimated location',
