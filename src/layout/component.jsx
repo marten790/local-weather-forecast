@@ -1,15 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import GoogleMaps from '../pages/components/google-maps';
-// import GoogleMaps from '../../components/google-maps';
 
 import InputDays from '../pages/weather-detail/input-weather';
 import GetDaysWeather from '../pages/weather-detail';
-// set partials conditionally to show only if data is available.
-// Remove state from all children components and only have the input passing state to actions.
-// set default state to 4 days in reducer and not in action
-// update all PropTypes to have correct INIT states and remove reducers not needed.
-// Possibly combine the input days and getweather reducers
 
 class WeatherDetail extends Component {
   constructor(props) {
