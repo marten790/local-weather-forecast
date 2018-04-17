@@ -4,7 +4,6 @@ const API_KEY_WEATHER = '767d4989a105ba9e4d65278e6b15488f';
 const ROOT_URL_WEATHER = 'http://api.openweathermap.org/data/2.5/forecast/';
 
 export default (daysCount, position) => {
-  console.log('api fetching stuff');
   const { latitude, longitude } = position;
 
   let numberOfDays = daysCount;

@@ -44,11 +44,7 @@ class GoogleMaps extends Component {
   }
 }
 GoogleMaps.propTypes = {
-  lat: PropTypes.number,
-  lon: PropTypes.number,
-};
-GoogleMaps.defaultProps = {
-  lat: null,
-  lon: null,
+  lat: PropTypes.number.isRequired,
+  lon: PropTypes.number.isRequired,
 };
 export default GoogleMaps;
