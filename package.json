@@ -7,7 +7,8 @@
     "lint": "eslint **/*.js, eslint **/*.jsx",
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "jest",
-    "test:watch": "npm test -- --watch"
+    "test:watch": "npm test -- --watch",
+    "collectCoverage": true 
   },
   "repository": "git+https://marten790@bitbucket.org/marten790/local-weather-forecast.git",
   "keywords": [
@@ -48,6 +49,7 @@
     "axios": "0.17.1",
     "babel-preset-stage-1": "6.1.18",
     "classnames": "^2.2.5",
+    "coveralls": "^3.0.0",
     "lodash": "3.10.1",
     "prop-types": "^15.6.1",
     "react": "^16.0.0",
