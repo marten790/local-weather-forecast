@@ -10,6 +10,3 @@ notifications:
 
 before_install:
 - npm i -g npm@5.8.0
-
-after_success:
-  jest --coverage && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js

@@ -6,9 +6,10 @@
   "scripts": {
     "lint": "eslint **/*.js, eslint **/*.jsx",
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
-    "test": "jest",
-    "test:watch": "npm test -- --watch",
-    "collectCoverage": true 
+    "test": "npm run lint && npm run test:scripts",
+   "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+   "lint": "eslint **/*.js, eslint **/*.jsx --fix .",
+   "test:scripts": "jest --coverage"
   },
   "repository": "git+https://marten790@bitbucket.org/marten790/local-weather-forecast.git",
   "keywords": [
