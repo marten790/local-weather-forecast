@@ -4,12 +4,11 @@
   "description": "Local weather forcast app",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint **/*.js, eslint **/*.jsx",
+    "lint": "eslint **/*.js, eslint **/*.jsx --fix .",
     "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js",
     "test": "npm run lint && npm run test:scripts",
-   "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
-   "lint": "eslint **/*.js, eslint **/*.jsx --fix .",
-   "test:scripts": "jest --coverage"
+    "coveralls": "cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js",
+    "test:scripts": "jest --coverage"
   },
   "repository": "git+https://marten790@bitbucket.org/marten790/local-weather-forecast.git",
   "keywords": [
@@ -20,14 +19,14 @@
   "license": "MIT",
   "homepage": "https://bitbucket.org/marten790/local-weather-forecast#readme",
   "devDependencies": {
-    "babel-core": "^6.26.0",
+    "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
+    "babel-preset-env": "^1.7.0",
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.11",
-    "enzyme": "^3.3.0",
-    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme": "^3.9.0",
+    "enzyme-adapter-react-16": "^1.9.1",
     "eslint": "^4.18.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-import-resolver-webpack": "^0.8.4",
@@ -39,7 +38,7 @@
     "jquery": "3.0.0",
     "jsdom": "8.1.0",
     "mocha": "2.4.5",
-    "node-sass": "^4.8.3",
+    "node-sass": "^4.11.0",
     "react-addons-test-utils": "0.14.7",
     "sass-loader": "^6.0.7",
     "style-loader": "^0.20.3",
@@ -48,7 +47,7 @@
   },
   "dependencies": {
     "axios": "0.17.1",
-    "babel-preset-stage-1": "6.1.18",
+    "babel-preset-stage-1": "^6.24.1",
     "classnames": "^2.2.5",
     "coveralls": "^3.0.0",
     "lodash": "3.10.1",
