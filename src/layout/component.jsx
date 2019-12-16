@@ -30,8 +30,7 @@ class WeatherDetail extends Component {
   }
 
   render() {
-    const { weatherdata } = this.props;
-    const { location } = this.props;
+    const { weatherdata, location } = this.props;
     return (
       <React.Fragment>
         {weatherdata.status === 'SUCCEEDED' && <InputDays onInputChange={this.onInputChange} onFormSubmit={this.onFormSubmit} days={this.state.noOfDays} />}
@@ -42,7 +41,7 @@ class WeatherDetail extends Component {
 
         {location.status === 'FAILED' && <p>Error</p>}
         {location.status === 'REQUESTED' && <p>Loading.....</p>}
-        {location.status === 'SUCCEEDED' && <GoogleMaps lon={location.geoLocation.longitude} lat={location.geoLocation.latitude} />}
+        {location.status === 'SUCCEEDED' && window.google.maps && <GoogleMaps lon={location.geoLocation.longitude} lat={location.geoLocation.latitude} />}
       </React.Fragment>
 
     );
